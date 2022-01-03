@@ -5,19 +5,15 @@ using IPALogger = IPA.Logging.Logger;
 
 namespace StickDriftFix
 {
-    [Plugin(RuntimeOptions.DynamicInit),
-     NoEnableDisable] // NoEnableDisable supresses the warnings of not having a OnEnable/OnStart
-    // and OnDisable/OnExit methods
+    [Plugin(RuntimeOptions.DynamicInit), NoEnableDisable] 
     public class Plugin
     {
-        internal static Plugin Instance { get; private set; }
-        internal static IPALogger Log { get; private set; }
+        private IPALogger _logger;
 
         [Init]
         public void Init(Zenjector zenjector, IPALogger logger, Config config)
         {
-            Instance = this;
-            Log = logger;
+            _logger = logger;
             zenjector.UseLogger(logger);
 
             zenjector.Install<StickDriftFixCoreInstaller>(Location.App);
