@@ -13,11 +13,13 @@ namespace StickDriftFix
         private static readonly Harmony Harmony = new Harmony(HarmonyID);
 
         internal static Plugin Instance { get; set; }
-        public static IPALogger Logger;
-        
+        public static IPALogger Logger { get; set; }
+
         [Init]
-        public void Init()
-        { }
+        public void Init(IPALogger logger)
+        {
+            Logger = logger;
+        }
 
         [OnEnable]
         public void OnEnable()
