@@ -1,5 +1,5 @@
 # StickDriftFix
-Mod commissioned by @Elemental#1657 on Discord.
+Specially Requested by @Elemental#1657 on Discord.
 
 ## Want to help out?
 
