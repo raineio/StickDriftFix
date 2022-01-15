@@ -12,6 +12,7 @@ namespace StickDriftFix
         private const string HarmonyID = "com.raineio.stickdriftfix";
         private static readonly Harmony Harmony = new Harmony(HarmonyID);
 
+        internal static Plugin Instance { get; set; }
         public static IPALogger Logger;
         
         [Init]
@@ -19,13 +20,14 @@ namespace StickDriftFix
         { }
 
         [OnEnable]
-        internal void OnEnable()
+        public void OnEnable()
         {
+            Logger.Notice(":PLEADING_FACE:");
             ApplyHarmonyPatches();
         }
 
         [OnDisable]
-        internal void OnDisable()
+        public void OnDisable()
         {
             RemoveHarmonyPatches();
         }
