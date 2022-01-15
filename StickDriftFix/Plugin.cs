@@ -24,7 +24,6 @@ namespace StickDriftFix
         [OnEnable]
         public void OnEnable()
         {
-            Logger.Notice(":PLEADING_FACE:");
             ApplyHarmonyPatches();
         }
 
